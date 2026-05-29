@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,8 @@ public partial class Form1 : Form
         Controls.Clear();
 
         Text = "Topesa Sound Forge Controller";
+        Icon = LoadAppIcon();
+
         FormBorderStyle = FormBorderStyle.None;
         WindowState = FormWindowState.Maximized;
         StartPosition = FormStartPosition.CenterScreen;
@@ -39,6 +42,18 @@ public partial class Form1 : Form
         KeyDown += Form1_KeyDown;
 
         BuildUi();
+    }
+
+    private Icon LoadAppIcon()
+    {
+        string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "app.ico");
+
+        if (File.Exists(iconPath))
+        {
+            return new Icon(iconPath);
+        }
+
+        return SystemIcons.Application;
     }
 
     private void Form1_KeyDown(object? sender, KeyEventArgs e)

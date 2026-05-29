@@ -6,10 +6,13 @@ obj/
 *.cache
 TestResults/
 
-# Build outputs
+# Build outputs / published apps
 dist/
 *.exe
 *.dll
 *.pdb
 *.deps.json
 *.runtimeconfig.json
+
+# VS Code local settings
+.vscode/
