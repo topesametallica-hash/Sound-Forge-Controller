@@ -5,3 +5,11 @@ obj/
 *.suo
 *.cache
 TestResults/
+
+# Build outputs
+dist/
+*.exe
+*.dll
+*.pdb
+*.deps.json
+*.runtimeconfig.json
